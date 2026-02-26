@@ -1,144 +1,266 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - BrainGlore / クイズパンチ</title>
+    <title>Privacy Policy - BrainGlore / クイズパンチ / 세상의 모든 퀴즈</title>
     <style>
-        body { font-family: 'Noto Sans KR', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; }
-        .lang-nav { position: sticky; top: 0; background: #fff; padding: 10px; border-bottom: 2px solid #eee; display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; z-index: 100; border-radius: 0 0 10px 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .lang-nav a { text-decoration: none; color: #007bff; font-weight: bold; font-size: 0.9em; padding: 5px 10px; border-radius: 5px; transition: background 0.3s; }
-        .lang-nav a:hover { background: #e7f3ff; }
-        .content-section { background: #fff; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 40px; display: none; }
-        .content-section:target { display: block; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Noto Sans KR', 'Noto Sans JP'; line-height: 1.6; color: #333; max-width: 850px; margin: 0 auto; padding: 20px; background-color: #f4f7f9; }
+        .lang-nav { position: sticky; top: 0; background: #ffffff; padding: 12px; border-bottom: 2px solid #007bff; display: flex; justify-content: center; gap: 20px; margin-bottom: 30px; z-index: 1000; border-radius: 0 0 10px 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .lang-nav a { text-decoration: none; color: #555; font-weight: 600; font-size: 0.95em; padding: 8px 16px; border-radius: 20px; transition: all 0.3s; border: 1px solid #ddd; }
+        .lang-nav a:hover, .lang-nav a.active { background: #007bff; color: #fff; border-color: #007bff; }
+        .content-section { background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 50px; display: none; }
         .content-section.active { display: block; }
-        h1 { font-size: 1.5rem; color: #222; border-left: 5px solid #007bff; padding-left: 15px; margin-bottom: 20px; }
-        h2 { font-size: 1.2rem; color: #444; margin-top: 25px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
-        table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.85em; }
-        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
-        th { background-color: #f4f4f4; }
-        .footer { text-align: center; color: #888; font-size: 0.8em; margin-top: 50px; }
-        ul { padding-left: 20px; }
-        li { margin-bottom: 8px; }
+        h1 { font-size: 1.8rem; color: #222; border-bottom: 3px solid #007bff; padding-bottom: 15px; margin-bottom: 30px; }
+        h2 { font-size: 1.3rem; color: #0056b3; margin-top: 35px; border-left: 5px solid #0056b3; padding-left: 12px; }
+        h3 { font-size: 1.1rem; color: #333; margin-top: 20px; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9em; min-width: 300px; }
+        th, td { border: 1px solid #dee2e6; padding: 12px; text-align: left; }
+        th { background-color: #f8f9fa; color: #444; }
+        ul { padding-left: 25px; }
+        li { margin-bottom: 10px; }
+        strong { color: #000; }
+        .footer { text-align: center; color: #999; font-size: 0.85em; margin-top: 60px; padding-bottom: 30px; }
+        @media (max-width: 600px) { .content-section { padding: 20px; } .lang-nav { gap: 10px; } .lang-nav a { padding: 6px 10px; font-size: 0.8em; } }
     </style>
 </head>
 <body>
 
     <nav class="lang-nav">
-        <a href="#ko">한국어</a>
-        <a href="#en">English</a>
-        <a href="#ja">日本語</a>
+        <a href="#en" id="btn-en" onclick="showLang('en')">English</a>
+        <a href="#ko" id="btn-ko" onclick="showLang('ko')">한국어</a>
+        <a href="#ja" id="btn-ja" onclick="showLang('ja')">日本語</a>
     </nav>
-
-    <section id="ko" class="content-section active">
-        <h1>개인정보 처리방침</h1>
-        <p><strong>시행일자: 2026년 2월 24일</strong></p>
-        
-        <h2>1. 개인정보의 처리 목적</h2>
-        <p>세상의 모든 퀴즈는 다음의 목적을 위하여 개인정보를 처리합니다:</p>
-        <ul>
-            <li><strong>사용자 인증 및 데이터 동기화:</strong> 구글 로그인을 통한 사용자 식별 및 데이터 유지(Supabase)</li>
-            <li><strong>게임 서비스 제공:</strong> GPGS 연동을 통한 업적 및 리더보드 관리</li>
-            <li><strong>서비스 개선:</strong> 앱 오류 분석(Firebase Crashlytics) 및 광고 제공(AdMob)</li>
-        </ul>
-
-        <h2>2. 처리하는 개인정보의 항목</h2>
-        <ul>
-            <li><strong>필수항목:</strong> 구글 계정 정보(UID, 이메일, 이름), 기기 정보(모델명, OS 버전)</li>
-            <li><strong>자동 수집:</strong> 게임 활동(점수, 순위), 학습 기록(오답 노트), 광고 시청 기록</li>
-        </ul>
-
-        <h2>3. 개인정보의 제3자 제공 및 위탁</h2>
-        <table>
-            <tr><th>위탁업체</th><th>내용</th><th>보유기간</th></tr>
-            <tr><td>Google LLC</td><td>GPGS 서비스, AdMob 광고, Firebase 분석</td><td>탈퇴 시까지</td></tr>
-            <tr><td>Supabase</td><td>DB 관리 및 게임 데이터 저장</td><td>탈퇴 시까지</td></tr>
-        </table>
-
-        <h2>4. 개인정보 보호책임자</h2>
-        <p>성명: 김현욱 / 연락처: kuri0395@gmail.com</p>
-    </section>
 
     <section id="en" class="content-section">
         <h1>Privacy Policy</h1>
         <p><strong>Effective Date: February 24, 2026</strong></p>
-        
-        <h2>1. Purpose of Processing</h2>
+
+        <h2>1. Purpose of Processing Personal Information</h2>
         <p><strong>BrainGlore</strong> processes personal information for the following purposes:</p>
+        <ol>
+            <li><strong>User Authentication and Data Synchronization</strong>
+                <ul>
+                    <li>User identification and account protection through <strong>Google Login</strong>.</li>
+                    <li>Maintaining game progress data even when changing devices (linked with Supabase).</li>
+                </ul>
+            </li>
+            <li><strong>Providing Game Services and GPGS Features</strong>
+                <ul>
+                    <li>Recording <strong>achievements</strong> and <strong>leaderboard</strong> scores through Google Play Games Services (GPGS).</li>
+                    <li>Managing quiz gameplay and individual records.</li>
+                </ul>
+            </li>
+            <li><strong>Service Improvement and Advertising</strong>
+                <ul>
+                    <li>Analysis of app errors and crashes (Firebase Crashlytics).</li>
+                    <li>Improving service quality and providing rewarded advertisements.</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>2. Processing and Retention Period</h2>
         <ul>
-            <li><strong>User Authentication:</strong> Identifying users and syncing data via Google Login & Supabase.</li>
-            <li><strong>Game Services:</strong> Managing achievements and leaderboards via Google Play Games Services (GPGS).</li>
-            <li><strong>Service Improvement:</strong> Analyzing app crashes (Firebase) and providing rewards-based ads (AdMob).</li>
+            <li><strong>Google Account Information and User ID:</strong> Destroyed immediately upon service withdrawal or user's deletion request.</li>
+            <li><strong>Game and Learning Data (Review Notes, Scores):</strong> Retained until service termination or account deletion.</li>
+            <li><strong>Ad Viewing Records:</strong> Retained until app deletion.</li>
+            <li><strong>Crash Logs:</strong> 90 days.</li>
         </ul>
 
-        <h2>2. Information We Collect</h2>
+        <h2>3. Categories of Personal Information Processed</h2>
+        <p><strong>Required Items (During Google Login and Service Use):</strong></p>
         <ul>
-            <li><strong>Required:</strong> Google account info (UID, Email, Nickname), Device info (Model, OS version).</li>
-            <li><strong>Automatically Collected:</strong> Game activity (Scores, Rankings), Quiz logs (Flags, Capitals, Emblems, Math, etc.), Ad interaction logs.</li>
+            <li><strong>Google Account Information:</strong> Unique Identifier (UID), Email address, Name (Nickname).</li>
+            <li><strong>Device Information:</strong> Device model name, OS version, Anonymous User Identifier (UUID).</li>
+        </ul>
+        <p><strong>Automatically Collected Items:</strong></p>
+        <ul>
+            <li><strong>Game Activity:</strong> Achievement data, leaderboard rankings, and scores.</li>
+            <li><strong>Learning Records:</strong> Incorrect answer notes, accuracy rates by quiz type.</li>
+            <li><strong>Ads/Analytics:</strong> Ad viewing history, in-app click logs, crash reports.</li>
         </ul>
 
-        <h2>3. Third-party Provision & Outsourcing</h2>
+        <h2>4. Provision of Personal Information to Third Parties</h2>
+        <p>In principle, <strong>BrainGlore</strong> does not provide users' personal information to external parties. However, to provide smooth services, we use the following external platforms:</p>
+        <ul>
+            <li><strong>Google (Google Play Games Services):</strong> Recording game achievements and leaderboard data.</li>
+            <li><strong>Supabase:</strong> Cloud storage for user authentication data, review notes, and game data.</li>
+            <li><strong>Firebase (Google):</strong> App error analysis and quality improvement.</li>
+        </ul>
+
+        <h2>5. Outsourcing of Personal Information Processing</h2>
         <table>
-            <tr><th>Provider</th><th>Service Description</th><th>Retention</th></tr>
-            <tr><td>Google LLC</td><td>GPGS, AdMob Ads, Firebase Crashlytics</td><td>Until account deletion</td></tr>
-            <tr><td>Supabase</td><td>Cloud DB and Game data storage</td><td>Until account deletion</td></tr>
+            <thead>
+                <tr>
+                    <th>Entrusted Party</th>
+                    <th>Contents of Entrusted Work</th>
+                    <th>Retention and Use Period</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Google LLC</strong></td>
+                    <td>Google Login authentication, GPGS management, AdMob advertising, Crash analysis</td>
+                    <td>Until withdrawal or achievement of purpose</td>
+                </tr>
+                <tr>
+                    <td><strong>Supabase</strong></td>
+                    <td>User account database management and storage of game data</td>
+                    <td>Until service withdrawal</td>
+                </tr>
+            </tbody>
         </table>
 
-        <h2>4. Your Rights</h2>
-        <p>Users can request to view, modify, or delete their data at any time through the app settings or by contacting us at <strong>kuri0395@gmail.com</strong>.</p>
+        <h2>6. Rights and Obligations of Data Subjects and Methods of Exercise</h2>
+        <p>Users may exercise the following rights regarding their personal information at any time:</p>
+        <ol>
+            <li>Access and modify personal information (via in-app profile settings, etc.).</li>
+            <li>Request disconnection of Google account and deletion of data.</li>
+            <li>Request destruction of personal information through service withdrawal.</li>
+        </ol>
+        <p>Rights can be exercised through the in-app inquiry or by emailing the Privacy Officer (<strong>kuri0395@gmail.com</strong>), and we will take action without delay.</p>
 
-        <h2>5. Privacy Officer</h2>
-        <p>Name: Hyunwook Kim / Contact: kuri0395@gmail.com</p>
+        <h2>7. Destruction of Personal Information</h2>
+        <p>When a user requests service withdrawal or disconnects their Google account, the relevant personal information is destroyed immediately. However, records stored on Google Play Games servers may need to be deleted by the user directly in Google settings according to Google's policy.</p>
+
+        <h2>8. Privacy Officer</h2>
+        <p><strong>Privacy Officer</strong><br>
+        Name: Hyunwook Kim<br>
+        Contact: <a href="mailto:kuri0395@gmail.com">kuri0395@gmail.com</a></p>
+
+        <h2>9. Changes to the Privacy Policy</h2>
+        <p>This privacy policy is effective from the date of implementation. In case of any addition, deletion, or correction of changes according to laws and policies, notification will be provided through announcements 7 days prior to the implementation of the changes.</p>
+    </section>
+
+    <section id="ko" class="content-section">
+        <h1>개인정보 처리방침</h1>
+        <p><strong>시행일자: 2026년 2월 24일</strong></p>
+
+        <h2>1. 개인정보의 처리 목적</h2>
+        <p><strong>세상의 모든 퀴즈</strong>는 다음의 목적을 위하여 개인정보를 처리합니다:</p>
+        <ol>
+            <li><strong>사용자 인증 및 데이터 동기화</strong>
+                <ul>
+                    <li><strong>구글 로그인</strong>을 통한 사용자 식별 및 계정 보호</li>
+                    <li>기기 변경 시에도 게임 진행 데이터 유지 (Supabase 연동)</li>
+                </ul>
+            </li>
+            <li><strong>게임 서비스 및 GPGS 기능 제공</strong>
+                <ul>
+                    <li>구글 플레이 게임즈(GPGS) 연동을 통한 <strong>업적 달성</strong> 및 <strong>리더보드</strong> 점수 기록</li>
+                    <li>퀴즈 게임 플레이 및 개인별 기록 관리</li>
+                </ul>
+            </li>
+            <li><strong>서비스 개선 및 광고 제공</strong>
+                <ul>
+                    <li>앱 오류 및 크래시 분석 (Firebase Crashlytics)</li>
+                    <li>서비스 품질 개선 및 리워드 광고 제공</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>2. 개인정보의 처리 및 보유기간</h2>
+        <ul>
+            <li><strong>구글 계정 정보 및 사용자 ID:</strong> 서비스 탈퇴 시 또는 사용자의 삭제 요청 시 즉시 파기</li>
+            <li><strong>게임 및 학습 데이터 (오답 노트, 점수):</strong> 서비스 종료 또는 계정 삭제 시까지</li>
+            <li><strong>광고 시청 기록:</strong> 앱 삭제 시까지</li>
+            <li><strong>크래시 로그:</strong> 90일</li>
+        </ul>
+
+        <h2>3. 처리하는 개인정보의 항목</h2>
+        <p><strong>필수항목 (구글 로그인 및 서비스 이용 시):</strong></p>
+        <ul>
+            <li><strong>구글 계정 정보:</strong> 고유 식별자(UID), 이메일 주소, 이름(닉네임)</li>
+            <li><strong>기기 정보:</strong> 기기 모델명, OS 버전, 익명 사용자 식별자(UUID)</li>
+        </ul>
+        <p><strong>자동 수집 항목:</strong></p>
+        <ul>
+            <li><strong>게임 활동:</strong> 업적 달성 정보, 리더보드 순위 및 점수</li>
+            <li><strong>학습 기록:</strong> 오답 노트 기록, 퀴즈 타입별 정답률</li>
+            <li><strong>광고/분석:</strong> 광고 시청 기록, 앱 내 클릭 로그, 크래시 리포트</li>
+        </ul>
+
+        <h2>4. 개인정보의 제3자 제공</h2>
+        <p><strong>세상의 모든 퀴즈</strong>는 원칙적으로 사용자의 개인정보를 외부에 제공하지 않으나, 원활한 서비스 제공을 위해 아래의 외부 플랫폼을 이용합니다:</p>
+        <ul>
+            <li><strong>Google (Google Play Games Services):</strong> 게임 업적 및 리더보드 데이터 기록</li>
+            <li><strong>Supabase:</strong> 사용자 인증 데이터 및 오답 노트/게임 데이터의 클라우드 저장</li>
+            <li><strong>Firebase (Google):</strong> 앱 오류 분석 및 품질 개선</li>
+        </ul>
+
+        <h2>5. 개인정보 처리의 위탁</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>위탁받는 자</th>
+                    <th>위탁업무의 내용</th>
+                    <th>보유 및 이용기간</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Google LLC</strong></td>
+                    <td>구글 로그인 인증, GPGS 업적/리더보드 관리, 광고 서비스(AdMob), 크래시 분석</td>
+                    <td>서비스 탈퇴 또는 목적 달성 시까지</td>
+                </tr>
+                <tr>
+                    <td><strong>Supabase</strong></td>
+                    <td>사용자 계정 DB 관리 및 오답 노트 데이터 저장</td>
+                    <td>서비스 탈퇴 시까지</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>6. 정보주체의 권리·의무 및 그 행사방법</h2>
+        <p>사용자는 언제든지 자신의 개인정보에 대해 다음과 같은 권리를 행사할 수 있습니다:</p>
+        <ol>
+            <li>개인정보 열람 및 수정 (앱 내 프로필 설정 등)</li>
+            <li>구글 계정 연동 해제 및 데이터 삭제 요구</li>
+            <li>서비스 탈퇴를 통한 개인정보 파기 요청</li>
+        </ol>
+        <p>권리 행사는 앱 내 문의하기 또는 보호책임자 이메일(<strong>kuri0395@gmail.com</strong>)을 통해 하실 수 있으며, 회사는 이에 대해 지체 없이 조치하겠습니다.</p>
+
+        <h2>7. 개인정보의 파기</h2>
+        <p>사용자가 서비스 탈퇴를 요청하거나 구글 계정 연동을 해지하는 경우, 관련 개인정보는 즉시 파기됩니다. 단, 구글 플레이 게임즈 서버에 저장된 기록은 구글의 정책에 따라 사용자가 직접 구글 설정에서 삭제해야 할 수 있습니다.</p>
+
+        <h2>8. 개인정보 보호책임자</h2>
+        <p><strong>개인정보 보호책임자</strong><br>
+        성명: 김현욱<br>
+        연락처: <a href="mailto:kuri0395@gmail.com">kuri0395@gmail.com</a></p>
+
+        <h2>9. 개인정보 처리방침 변경</h2>
+        <p>이 개인정보 처리방침은 시행일로부터 적용되며, 법령 및 방침에 따른 변경내용의 추가, 삭제 및 정정이 있는 경우에는 변경사항의 시행 7일 전부터 공지사항을 통하여 고지할 것입니다.</p>
     </section>
 
     <section id="ja" class="content-section">
         <h1>プライバシーポリシー</h1>
-        <p><strong>施行日: 2026年2월 24일</strong></p>
-        
+        <p><strong>施行日: 2026年2月24日</strong></p>
+
         <h2>1. 個人情報の処理目的</h2>
         <p><strong>クイズパンチ</strong>は、以下の目的のために個人情報を処理します：</p>
+        <ol>
+            <li><strong>ユーザー認証およびデータの同期</strong>
+                <ul>
+                    <li><strong>Googleログイン</strong>によるユーザー識別およびアカウント保護。</li>
+                    <li>端末変更時にもゲーム進行データを維持（Supabase連動）。</li>
+                </ul>
+            </li>
+            <li><strong>ゲームサービスおよびGPGS機能の提供</strong>
+                <ul>
+                    <li>Google Playゲームサービス(GPGS)連動による<strong>実績達成</strong>および<strong>リーダーボード</strong>のスコア記録。</li>
+                    <li>クイズゲームのプレイおよび個人別記録の管理。</li>
+                </ul>
+            </li>
+            <li><strong>サービスの改善および広告の提供</strong>
+                <ul>
+                    <li>アプリのエラーおよびクラッシュ分析（Firebase Crashlytics）。</li>
+                    <li>サービス品質の改善およびリワード広告の提供。</li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>2. 個人情報の処理および保有期間</h2>
         <ul>
-            <li><strong>ユーザー認証:</strong> Googleログインによる本人確認およびデータの同期(Supabase)。</li>
-            <li><strong>ゲームサービス:</strong> GPGS連動による実績(アチーブメント)およびリーダーボードの管理。</li>
-            <li><strong>サービスの改善:</strong> アプリのエラー分析(Firebase)およびリワード広告の提供(AdMob)。</li>
-        </ul>
-
-        <h2>2. 収集する個人情報の項目</h2>
-        <ul>
-            <li><strong>必須項目:</strong> Googleアカウント情報(UID、メール、名前)、端末情報(モデル名、OSバージョン)。</li>
-            <li><strong>自動収集:</strong> ゲーム活動(スコア、順位)、学習記録(誤答ノート)、広告視聴ログ。</li>
-        </ul>
-
-        <h2>3. 個人情報の第三者提供および委託</h2>
-        <table>
-            <tr><th>委託先</th><th>業務内容</th><th>保有期間</th></tr>
-            <tr><td>Google LLC</td><td>GPGSサービス、AdMob広告、Firebase分析</td><td>退会時まで</td></tr>
-            <tr><td>Supabase</td><td>DB管理およびゲームデータの保存</td><td>退会時まで</td></tr>
-        </table>
-
-        <h2>4. ユーザーの権利</h2>
-        <p>ユーザーはいつでも、アプリ内の設定またはお問い合わせ先(<strong>kuri0395@gmail.com</strong>)を通じて、個人情報の閲覧、修正、削除をリクエストできます。</p>
-
-        <h2>5. 個人情報保護責任者</h2>
-        <p>氏名: 金賢旭 (Kim Hyunwook) / 連絡先: kuri0395@gmail.com</p>
-    </section>
-
-    <div class="footer">
-        &copy; 2026. BrainGlore / クイズパンチ All rights reserved.
-    </div>
-
-    <script>
-        // URL 해시값에 따라 섹션 변경하는 간단한 스크립트
-        window.addEventListener('hashchange', function() {
-            const sections = document.querySelectorAll('.content-section');
-            sections.forEach(s => s.classList.remove('active'));
-            
-            const activeSection = document.querySelector(window.location.hash || '#ko');
-            if (activeSection) activeSection.classList.add('active');
-        });
-        
-        // 초기 로드 시 해시가 없으면 한국어 표시
-        if(!window.location.hash) window.location.hash = '#ko';
-    </script>
-</body>
-</html>
+            <li><strong>Googleアカウント情報およびユーザーID:</strong> サービス退会時またはユーザーの削除要請時に直ちに破棄。</li>
+            <li><strong>ゲームおよび学習データ（誤答ノート、スコア）:</strong> サービスの終了またはアカウント削除時まで。</li>
+            <li><strong>広告視聴記録:</strong> アプリ削除時まで。</li>
