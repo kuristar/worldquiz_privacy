@@ -264,3 +264,108 @@
             <li><strong>Googleアカウント情報およびユーザーID:</strong> サービス退会時またはユーザーの削除要請時に直ちに破棄。</li>
             <li><strong>ゲームおよび学習データ（誤答ノート、スコア）:</strong> サービスの終了またはアカウント削除時まで。</li>
             <li><strong>広告視聴記録:</strong> アプリ削除時まで。</li>
+            <li><strong>クラッシュログ:</strong> 90日間。</li>
+        </ul>
+
+        <h2>3. 処理する個人情報の項目</h2>
+        <p><strong>必須項目（Googleログインおよびサービス利用時）:</strong></p>
+        <ul>
+            <li><strong>Googleアカウント情報:</strong> 固有識別子(UID)、メールアドレス、名前(ニックネーム)。</li>
+            <li><strong>端末情報:</strong> 端末モデル名、OSバージョン、匿名ユーザー識別子(UUID)。</li>
+        </ul>
+        <p><strong>自動収集項目:</strong></p>
+        <ul>
+            <li><strong>ゲーム活動:</strong> 実績達成情報、リーダーボードの順位およびスコア。</li>
+            <li><strong>学習記録:</strong> 誤答ノートの記録、クイズタイプ別の正答率。</li>
+            <li><strong>広告/分析:</strong> 広告視聴記録、アプリ内クリックログ、クラッシュレポート。</li>
+        </ul>
+
+        <h2>4. 個人情報の第三者提供</h2>
+        <p><strong>クイズパンチ</strong>は、原則としてユーザーの個人情報を外部に提供しませんが、円滑なサービス提供のために以下の外部プラットフォームを利用します：</p>
+        <ul>
+            <li><strong>Google (Google Play Games Services):</strong> ゲームの実績およびリーダーボードデータの記録。</li>
+            <li><strong>Supabase:</strong> ユーザー認証データおよび誤答ノート/ゲームデータのクラウド保存。</li>
+            <li><strong>Firebase (Google):</strong> アプリのエラー分析および品質の改善。</li>
+        </ul>
+
+        <h2>5. 個人情報処理の委託</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>委託先</th>
+                    <th>委託業務の内容</th>
+                    <th>保有および利用期間</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Google LLC</strong></td>
+                    <td>Googleログイン認証、GPGS実績/リーダーボード管理、広告サービス(AdMob)、クラッシュ分析</td>
+                    <td>サービスの退会または目的達成時まで</td>
+                </tr>
+                <tr>
+                    <td><strong>Supabase</strong></td>
+                    <td>ユーザーアカウントDB管理および誤答ノートデータの保存</td>
+                    <td>サービスの退会時まで</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>6. 情報主体の権利・義務およびその行使方法</h2>
+        <p>ユーザーはいつでも自分の個人情報に対して、以下のような権利を行使できます：</p>
+        <ol>
+            <li>個人情報の閲覧および修正（アプリ内のプロファイル設定など）。</li>
+            <li>Googleアカウントの連動解除およびデータの削除要求。</li>
+            <li>サービス退会を通じた個人情報の破棄要請。</li>
+        </ol>
+        <p>権利の行使はアプリ内のお問い合わせ、または保護責任者のメール(<strong>kuri0395@gmail.com</strong>)を通じて行うことができ、当社はこれに対して遅滞なく措置いたします。</p>
+
+        <h2>7. 個人情報の破棄</h2>
+        <p>ユーザーがサービスの退会を要請するか、Googleアカウントの連動を解除する場合、関連する個人情報は直ちに破棄されます。ただし、Google Playゲームサーバーに保存された記録は、Googleのポリシーに従い、ユーザーが直接Googleの設定から削除する必要がある場合があります。</p>
+
+        <h2>8. 個人情報保護責任者</h2>
+        <p><strong>個人情報保護責任者</strong><br>
+        氏名: 金賢旭 (Kim Hyunwook)<br>
+        連絡先: <a href="mailto:kuri0395@gmail.com">kuri0395@gmail.com</a></p>
+
+        <h2>9. プライバシーポリシーの変更</h2>
+        <p>このプライバシーポリシーは施行日から適用され、法令および方針に基づく変更内容の追加、削除、および訂正がある場合には、変更事項の施行7日前からお知らせを通じて告知いたします。</p>
+    </section>
+
+    <div class="footer">
+        &copy; 2026 BrainGlore / クイズパンチ / 세상의 모든 퀴즈. All rights reserved.
+    </div>
+
+    <script>
+        function showLang(lang) {
+            // 모든 섹션 숨기기
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(s => s.classList.remove('active'));
+            
+            // 모든 버튼 비활성화
+            const navLinks = document.querySelectorAll('.lang-nav a');
+            navLinks.forEach(l => l.classList.remove('active'));
+            
+            // 선택한 언어 섹션 및 버튼 활성화
+            const activeSection = document.getElementById(lang);
+            const activeBtn = document.getElementById('btn-' + lang);
+            
+            if (activeSection) activeSection.classList.add('active');
+            if (activeBtn) activeBtn.classList.add('active');
+
+            // URL 해시 업데이트 (페이지 새로고침 시 유지용)
+            window.location.hash = lang;
+        }
+
+        // 초기 로드 시 실행
+        window.onload = function() {
+            const hash = window.location.hash.replace('#', '');
+            if (hash === 'ko' || hash === 'en' || hash === 'ja') {
+                showLang(hash);
+            } else {
+                showLang('en'); // 기본값: 영어
+            }
+        };
+    </script>
+</body>
+</html>
